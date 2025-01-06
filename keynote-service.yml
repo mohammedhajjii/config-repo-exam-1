@@ -13,7 +13,7 @@ spring:
           issuer-uri: http://localhost:8080/realms/test-rlm
           jwk-set-uri: http://localhost:8080/realms/test-rlm/protocol/openid-connect/certs
           authorities-claim-name: realm_access.roles
-          authority-prefix: ROLE_
+#          authority-prefix: ROLE_
 
 # port:
 server:
