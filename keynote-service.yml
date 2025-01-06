@@ -6,6 +6,15 @@ spring:
     console:
       enabled: true
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/test-rlm
+          jwk-set-uri: http://localhost:8080/realms/test-rlm/protocol/openid-connect/certs
+          authorities-claim-name: realm_access.roles
+          authority-prefix: ROLE_
+
 # port:
 server:
   port: 8081
@@ -14,3 +23,7 @@ server:
 eureka:
   instance:
     prefer-ip-address: true
+
+springdoc:
+  swagger-ui:
+    config-url: http://localhost:8081/v3/api-docs/swagger-config
